@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ROUTIX Civic - Citizen AI Defect Reporter</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts: Public Sans & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Public+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed-variant": "#3f465c",
+            "primary": "#a43700",
+            "error": "#ba1a1a",
+            "surface-container": "#e6eeff",
+            "surface-dim": "#ccdbf4",
+            "on-primary-container": "#fffbff",
+            "inverse-on-surface": "#ebf1ff",
+            "primary-fixed": "#ffdbcf",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#380d00",
+            "surface-tint": "#a83900",
+            "on-error": "#ffffff",
+            "surface": "#f8f9ff",
+            "secondary-fixed": "#dae2fd",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#8f7066",
+            "tertiary-container": "#00855d",
+            "background": "#f8f9ff",
+            "on-surface-variant": "#5a4138",
+            "secondary-container": "#dae2fd",
+            "on-tertiary-fixed-variant": "#005137",
+            "surface-container-high": "#dde9ff",
+            "on-tertiary-fixed": "#002114",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed": "#131b2e",
+            "outline-variant": "#e3bfb2",
+            "surface-variant": "#d5e3fd",
+            "surface-container-highest": "#d5e3fd",
+            "surface-bright": "#f8f9ff",
+            "inverse-primary": "#ffb59a",
+            "on-surface": "#0d1c2f",
+            "on-error-container": "#93000a",
+            "tertiary": "#006948",
+            "secondary": "#565e74",
+            "primary-fixed-dim": "#ffb59a",
+            "on-secondary-container": "#5c647a",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed-dim": "#68dba9",
+            "tertiary-fixed": "#85f8c4",
+            "primary-container": "#cd4700",
+            "inverse-surface": "#233144",
+            "on-tertiary-container": "#f5fff7",
+            "error-container": "#ffdad6",
+            "on-background": "#0d1c2f",
+            "surface-container-low": "#eff4ff",
+            "on-primary-fixed-variant": "#802a00",
+            "secondary-fixed-dim": "#bec6e0"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter": "1.25rem",
+            "space-lg": "1.5rem",
+            "margin": "2rem",
+            "gutter-mobile": "0.75rem",
+            "space-sm": "0.5rem",
+            "margin-mobile": "1rem"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Public Sans"],
+            "body-md": ["Public Sans"],
+            "headline-sm": ["Public Sans"],
+            "headline-xl": ["Public Sans"],
+            "body-lg": ["Public Sans"],
+            "label-lg": ["JetBrains Mono"],
+            "headline-lg": ["Public Sans"],
+            "display-lg": ["Public Sans"],
+            "label-md": ["JetBrains Mono"],
+            "headline-md": ["Public Sans"],
+            "headline-xl-mobile": ["Public Sans"],
+            "body-sm": ["Public Sans"],
+            "label-sm": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased flex flex-col min-h-screen pb-24 selection:bg-primary selection:text-on-primary">
+<!-- ================= TOP APP BAR (Shared Component Anchor) ================= -->
+<header class="bg-surface docked full-width top-0 z-40 shadow-sm border-b border-outline-variant/40">
+<!-- Primary Civic App Bar -->
+<div class="flex justify-between items-center w-full px-margin-mobile py-space-sm">
+<div class="flex items-center gap-2">
+<button aria-label="Open Navigation Drawer" class="p-1 rounded text-on-surface-variant hover:bg-surface-container active:translate-y-px transition-transform duration-75" type="button">
+<span class="material-symbols-outlined text-[26px]">menu</span>
+</button>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary tracking-tight">ROUTIX Civic</span>
+</div>
+<div class="flex items-center gap-2">
+<!-- Offline sync status chip -->
+<div class="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container text-tertiary font-label-sm text-label-sm font-semibold border border-outline-variant/30">
+<span class="material-symbols-outlined text-[16px] text-tertiary" style="font-variation-settings: 'FILL' 1;">sync</span>
+<span class="hidden sm:inline">Ready to sync</span>
+<span class="px-1 py-0.2 rounded bg-tertiary text-on-tertiary text-[10px]">0</span>
+</div>
+<button aria-label="Sync telemetry data" class="p-1.5 rounded text-on-surface hover:bg-surface-container active:translate-y-px transition-transform duration-75" type="button">
+<span class="material-symbols-outlined text-[22px]">sync</span>
+</button>
+</div>
+</div>
+<!-- Ward Context & Language Selector Sub-Bar (High-Visibility Daylight Ribbon) -->
+<div class="bg-inverse-surface text-inverse-on-surface px-margin-mobile py-1.5 flex items-center justify-between font-label-md text-label-md border-t border-outline/20">
+<div class="flex items-center gap-1.5 overflow-hidden text-ellipsis whitespace-nowrap">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">location_city</span>
+<span class="text-white font-semibold tracking-wide">BBMP Ward 85, Bengaluru East</span>
+</div>
+<!-- Multi-language trigger (EN | ಕನ್ನಡ | हिंदी) -->
+<div class="flex items-center gap-1 text-[11px] font-label-sm font-medium bg-black/40 px-2 py-0.5 rounded border border-white/10 shrink-0">
+<span class="text-primary-fixed font-bold">EN</span>
+<span class="text-white/40">|</span>
+<button class="hover:text-white transition-colors">ಕನ್ನಡ</button>
+<span class="text-white/40">|</span>
+<button class="hover:text-white transition-colors">हिंदी</button>
+</div>
+</div>
+</header>
+<!-- ================= MAIN REPORTING CANVAS ================= -->
+<main class="flex-1 w-full max-w-3xl mx-auto px-gutter-mobile sm:px-margin pt-space-md space-y-space-md">
+<!-- Screen Identifier Badge & Daylight Guidance -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">AI Defect Scanner</h1>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-amber-100 text-amber-900 border border-amber-300 font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">wb_sunny</span> Outdoor Calibrated
+      </span>
+</div>
+<!-- ================= CAMERA VIEWFINDER HUD (AI DETECTION) ================= -->
+<section class="bg-surface-container-lowest rounded-xl border-2 border-outline-variant overflow-hidden shadow-sm relative">
+<!-- Camera Preview Viewport -->
+<div class="relative w-full aspect-[4/3] bg-inverse-surface overflow-hidden">
+<!-- Live Asphalt Defect Imagery -->
+<img class="w-full h-full object-cover select-none" data-alt="A sunlit, real-world Indian suburban arterial road with high-contrast rough asphalt under intense daylight. In the center, a hazardous, jagged edge-collapse pothole filled with murky monsoon rainwater exposes cracked structural aggregate and pavement layers. The framing is framed from a mobile smartphone perspective with bright outdoor glare and civil engineering precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4jpmXNYpIwWbODvNG45BDFL9p0e6PH7Vpja4E9nJIT6V0igvQC5EvN7cqCeOQ1fe4F7FFe_DwoaON1nwsZMRCt_OGAl9-RkNbcqcyWKZwqrVd3G6LKr2yNGxtjzpmVteQYntpHTU5cYtOupqeqD7fI_3qY_hlDbnNqMGV4cn0_Rc4gaFU7FqWhNQuFOhKYsX-tCVoMReQEaQBxwlGYAbKOsgavShwbdB3WSDSq5gmmid7Dkqx6pHPNA"/>
+<!-- Optical Reticle / Grid Overlay Lines -->
+<div class="absolute inset-0 pointer-events-none grid grid-cols-3 grid-rows-3 opacity-30">
+<div class="border-r border-b border-white/40"></div>
+<div class="border-r border-b border-white/40"></div>
+<div class="border-b border-white/40"></div>
+<div class="border-r border-b border-white/40"></div>
+<div class="border-r border-b border-white/40"></div>
+<div class="border-b border-white/40"></div>
+<div class="border-r border-white/40"></div>
+<div class="border-r border-white/40"></div>
+<div></div>
+</div>
+<!-- AI Real-Time Bounding Box (Pothole Defect Identified) -->
+<div class="absolute top-[28%] left-[18%] w-[64%] h-[56%] border-2 border-dashed border-primary bg-primary/10 rounded-lg pointer-events-none flex flex-col justify-between p-2 shadow-[0_0_15px_rgba(230,81,0,0.5)]">
+<!-- Bounding Box Corner Reticles -->
+<div class="flex justify-between items-start">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded font-bold tracking-wider uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+              DEFECT #01 • CRITICAL
+            </span>
+<span class="bg-black/75 text-amber-300 font-label-sm text-label-sm px-1.5 py-0.5 rounded border border-amber-400/40 font-mono">
+              CONF: 94.2%
+            </span>
+</div>
+<!-- Bottom Metric Marker on Box -->
+<div class="self-end bg-black/85 text-white font-label-sm text-label-sm px-2 py-0.5 rounded flex items-center gap-1 border border-white/20">
+<span class="material-symbols-outlined text-[12px] text-tertiary-fixed">straighten</span>
+<span>~14cm Depth | 1.2m²</span>
+</div>
+</div>
+<!-- Top Live HUD Bar -->
+<div class="absolute top-2 left-2 right-2 flex justify-between items-center pointer-events-none">
+<div class="flex items-center gap-1.5 bg-black/80 backdrop-blur-xs text-white px-2 py-1 rounded font-label-sm text-label-sm border border-white/20">
+<span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+<span class="font-bold tracking-wider">LIVE EDGE-AI CAM</span>
+</div>
+<div class="flex items-center gap-1 bg-black/80 text-white px-2 py-1 rounded font-label-sm text-label-sm border border-white/20">
+<span class="material-symbols-outlined text-[14px] text-primary-fixed">auto_fix_high</span>
+<span>TENSOR ENGINE v4.2</span>
+</div>
+</div>
+<!-- Telemetry Data Strip Overlay (Bottom of Viewfinder) -->
+<div class="absolute bottom-0 inset-x-0 bg-inverse-surface/95 text-white px-3 py-2 border-t border-primary/40 backdrop-blur-sm">
+<div class="flex items-center justify-between text-xs font-label-md text-label-md">
+<div class="flex items-center gap-1.5 text-primary-fixed">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">radar</span>
+<span class="font-bold uppercase tracking-wider">Telemetry:</span>
+</div>
+<div class="flex items-center gap-2 text-white/90">
+<span>Depth: <strong class="text-white font-mono">~14 cm</strong></span>
+<span class="text-white/30">|</span>
+<span>Area: <strong class="text-white font-mono">1.2 m²</strong></span>
+<span class="text-white/30">|</span>
+<span class="bg-red-600/90 text-white font-bold px-1.5 py-0.2 rounded text-[10px]">HAZARD: 4/5</span>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Detection Result Banner (High Contrast Card Body) -->
+<div class="p-3 bg-amber-50 border-t-2 border-primary flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[24px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">error</span>
+<div class="space-y-0.5 flex-1">
+<div class="flex items-center justify-between">
+<p class="font-headline-sm text-sm font-bold text-on-surface">Edge-Collapse Pothole &amp; Standing Monsoon Water</p>
+<span class="font-label-sm text-label-sm font-semibold text-primary px-1.5 py-0.5 rounded bg-primary/10 border border-primary/30">94.2% Verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Classified as severe two-wheeler hazard. Immediate asphalt patching requested.</p>
+</div>
+</div>
+</section>
+<!-- ================= SMART DUPLICATE PREVENTION SAFEGUARD ================= -->
+<section class="bg-surface-container-low rounded-lg p-3.5 border-l-4 border-l-primary border-r border-t border-b border-outline-variant shadow-xs">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[22px] shrink-0 mt-0.5">merge_type</span>
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<h2 class="font-label-lg text-label-lg font-bold text-on-surface">Duplicate Detection Guard</h2>
+<span class="bg-amber-200 text-amber-900 font-label-sm text-label-sm px-1.5 py-0.2 rounded font-bold">Smart Merge</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface">2 similar reports</strong> detected within 45m of this coordinate. Submitting will bundle your photo evidence into 
+            <span class="font-label-md text-label-md font-bold px-1 py-0.5 bg-secondary-container text-on-secondary-fixed rounded">Ticket #BLR-85-4092</span> to accelerate municipal crew dispatch.
+          </p>
+</div>
+</div>
+</section>
+<!-- ================= GEOSPATIAL & TELEMETRY BANNER ================= -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-3.5 space-y-2 shadow-xs">
+<div class="flex items-center justify-between pb-1.5 border-b border-outline-variant/50">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary" style="font-variation-settings: 'FILL' 1;">gps_fixed</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Verified Geolocation Coordinates</span>
+</div>
+<div class="bg-inverse-surface text-cyan-300 font-label-sm text-label-sm px-2 py-0.5 rounded font-mono font-semibold">
+          ±2.8m Accuracy
+        </div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+<!-- Monospace Coordinates Badge -->
+<div class="bg-inverse-surface text-white p-2.5 rounded font-label-md text-label-md flex flex-col justify-center space-y-0.5">
+<div class="text-white/60 font-label-sm text-[10px] uppercase tracking-wider">Lat / Long Coordinates</div>
+<div class="text-tertiary-fixed font-bold font-mono tracking-wide">12.9568° N, 77.7011° E</div>
+</div>
+<!-- Municipal Landmark / Chainage -->
+<div class="bg-surface-container-low p-2.5 rounded border border-outline-variant/60 flex flex-col justify-center">
+<div class="text-on-surface-variant font-label-sm text-[10px] uppercase font-bold tracking-wider">Chainage / Landmark</div>
+<div class="font-label-md text-label-md text-on-surface font-semibold truncate">[STN ORR-44+120] Near Marathahalli Flyover</div>
+</div>
+</div>
+<!-- Human Readable Civic Address -->
+<div class="pt-1 flex items-start gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">pin_drop</span>
+<span>Outer Ring Road, Near Marathahalli Bridge, Bengaluru, Karnataka 560037</span>
+</div>
+</section>
+<!-- ================= DEFECT CATEGORY PILLS ================= -->
+<section class="space-y-2">
+<label class="block font-label-lg text-label-lg font-bold text-on-surface">
+        Road Defect Classification <span class="text-primary">*</span>
+</label>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+<!-- Pill 1: Pothole (Active Selection) -->
+<button class="flex items-center justify-between p-2.5 rounded-lg border-2 border-primary bg-primary text-on-primary font-body-sm text-body-sm font-bold shadow-xs active:translate-y-px transition-all" type="button">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">radio_button_checked</span>
+<span>Pothole (Active)</span>
+</span>
+<span class="w-2 h-2 rounded-full bg-white"></span>
+</button>
+<!-- Pill 2: Waterlogging -->
+<button class="flex items-center gap-1.5 p-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container font-body-sm text-body-sm font-medium active:translate-y-px transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">water</span>
+<span>Waterlogging</span>
+</button>
+<!-- Pill 3: Cracked Surface -->
+<button class="flex items-center gap-1.5 p-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container font-body-sm text-body-sm font-medium active:translate-y-px transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">broken_image</span>
+<span>Cracked Surface</span>
+</button>
+<!-- Pill 4: Broken Kerb / Manhole -->
+<button class="flex items-center gap-1.5 p-2.5 rounded-lg border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-surface-container font-body-sm text-body-sm font-medium active:translate-y-px transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">grid_view</span>
+<span>Broken Kerb / Manhole</span>
+</button>
+</div>
+</section>
+<!-- ================= SEVERITY & DESCRIPTION INPUT FORM ================= -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 space-y-4 shadow-xs">
+<!-- Severity Slider Gauge -->
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg font-bold text-on-surface" for="severity-range">Hazard Severity Grade</label>
+<span class="font-label-md text-label-md font-bold px-2 py-0.5 rounded bg-red-100 text-red-900 border border-red-300">
+            Level 4 - Critical
+          </span>
+</div>
+<input class="w-full h-3 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary focus:outline-none" id="severity-range" max="5" min="1" type="range" value="4"/>
+<div class="flex justify-between font-label-sm text-[11px] text-on-surface-variant px-0.5">
+<span>Level 1 (Minor)</span>
+<span>Level 2</span>
+<span>Level 3 (Moderate)</span>
+<span class="font-bold text-primary">Level 4 (Critical)</span>
+<span class="font-bold text-red-700">Level 5 (Emergency)</span>
+</div>
+</div>
+<!-- Description Note -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md font-bold text-on-surface" for="defect-notes">Field Observation Notes</label>
+<span class="text-xs text-on-surface-variant">Auto-Assisted</span>
+</div>
+<textarea class="w-full bg-white border border-outline-variant rounded-lg p-2.5 font-body-sm text-body-sm text-on-surface placeholder-on-surface-variant/60 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" id="defect-notes" rows="2">Severe pothole after monsoon rains causing two-wheeler skids. Water accumulation hides deep cavity during night.</textarea>
+</div>
+<!-- Privacy & Tracking Contact Mode -->
+<div class="pt-2 border-t border-outline-variant/60 space-y-3">
+<label class="block font-label-md text-label-md font-bold text-on-surface">Citizen Privacy &amp; Tracking Updates</label>
+<div class="flex flex-col sm:flex-row gap-3">
+<!-- Anonymous Option -->
+<label class="flex items-center gap-2 cursor-pointer bg-surface-container-low p-2.5 rounded-lg border border-outline-variant flex-1">
+<input class="w-4 h-4 text-primary focus:ring-primary border-outline-variant" name="reporting_mode" type="radio" value="anonymous"/>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Anonymous Submission</span>
+</label>
+<!-- Verified SMS Option -->
+<label class="flex items-center gap-2 cursor-pointer bg-surface-container-lowest p-2.5 rounded-lg border-2 border-primary flex-1">
+<input checked="" class="w-4 h-4 text-primary focus:ring-primary border-outline-variant" name="reporting_mode" type="radio" value="verified"/>
+<div class="leading-tight">
+<span class="font-body-sm text-body-sm font-bold text-on-surface block">SMS Ticket Tracking</span>
+<span class="text-[11px] text-on-surface-variant">Real-time resolution alerts</span>
+</div>
+</label>
+</div>
+<!-- Phone Number Input with +91 Indian Prefix -->
+<div class="flex items-center">
+<span class="inline-flex items-center px-3 py-2.5 rounded-l-lg border border-r-0 border-outline-variant bg-surface-container text-on-surface font-label-md text-label-md font-bold">
+            🇮🇳 +91
+          </span>
+<input class="flex-1 rounded-r-lg border border-outline-variant p-2.5 font-label-md text-label-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Enter 10-digit mobile number" type="tel" value="98450 12894"/>
+</div>
+</div>
+</section>
+<!-- ================= STICKY SUBMIT ACTION BUTTON (Tactile Field Feel) ================= -->
+<div class="sticky bottom-16 inset-x-0 z-30 pt-2 pb-3 bg-gradient-to-t from-background via-background/95 to-transparent">
+<button class="w-full min-h-[48px] py-3.5 px-4 bg-primary hover:bg-primary-container text-on-primary rounded-xl font-headline-sm text-sm sm:text-base font-bold tracking-tight shadow-md border-b-2 border-[#BF360C] flex items-center justify-center gap-2.5 active:translate-y-px transition-all duration-75 cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[22px]">send</span>
+<span>Submit Defect Report &amp; Generate Civic Ticket</span>
+</button>
+<div class="text-center mt-1.5">
+<span class="font-label-sm text-[11px] text-on-surface-variant">Guaranteed under Karnataka Sakala Services Act • Ward SLA: 48 Hours</span>
+</div>
+</div>
+</main>
+<!-- ================= BOTTOM NAVIGATION BAR (Shared Component Anchor) ================= -->
+<!-- Active Destination: "Reporter" (JSON match) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-mobile py-space-xs h-16 bg-surface-container-lowest dark:bg-surface border-t border-outline-variant/60 shadow-lg">
+<!-- Item 1: Reporter (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-space-sm py-space-xs font-semibold active:translate-y-px transition-transform duration-75" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">report_problem</span>
+<span class="font-label-sm text-label-sm">Reporter</span>
+</a>
+<!-- Item 2: Map Tracker -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs hover:bg-surface-container active:translate-y-px transition-transform duration-75" href="#">
+<span class="material-symbols-outlined text-[20px]">map</span>
+<span class="font-label-sm text-label-sm">Map Tracker</span>
+</a>
+<!-- Item 3: Dashboard -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs hover:bg-surface-container active:translate-y-px transition-transform duration-75" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<!-- Item 4: Jobs Portal -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs hover:bg-surface-container active:translate-y-px transition-transform duration-75" href="#">
+<span class="material-symbols-outlined text-[20px]">engineering</span>
+<span class="font-label-sm text-label-sm">Jobs Portal</span>
+</a>
+</nav>
+</body></html>

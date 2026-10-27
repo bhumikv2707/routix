@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ROUTIX Civic Command | Municipal Corp. Bengaluru</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Public+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed-variant": "#3f465c",
+            "primary": "#a43700",
+            "error": "#ba1a1a",
+            "surface-container": "#e6eeff",
+            "surface-dim": "#ccdbf4",
+            "on-primary-container": "#fffbff",
+            "inverse-on-surface": "#ebf1ff",
+            "primary-fixed": "#ffdbcf",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#380d00",
+            "surface-tint": "#a83900",
+            "on-error": "#ffffff",
+            "surface": "#f8f9ff",
+            "secondary-fixed": "#dae2fd",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#8f7066",
+            "tertiary-container": "#00855d",
+            "background": "#f8f9ff",
+            "on-surface-variant": "#5a4138",
+            "secondary-container": "#dae2fd",
+            "on-tertiary-fixed-variant": "#005137",
+            "surface-container-high": "#dde9ff",
+            "on-tertiary-fixed": "#002114",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed": "#131b2e",
+            "outline-variant": "#e3bfb2",
+            "surface-variant": "#d5e3fd",
+            "surface-container-highest": "#d5e3fd",
+            "surface-bright": "#f8f9ff",
+            "inverse-primary": "#ffb59a",
+            "on-surface": "#0d1c2f",
+            "on-error-container": "#93000a",
+            "tertiary": "#006948",
+            "secondary": "#565e74",
+            "primary-fixed-dim": "#ffb59a",
+            "on-secondary-container": "#5c647a",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed-dim": "#68dba9",
+            "tertiary-fixed": "#85f8c4",
+            "primary-container": "#cd4700",
+            "inverse-surface": "#233144",
+            "on-tertiary-container": "#f5fff7",
+            "error-container": "#ffdad6",
+            "on-background": "#0d1c2f",
+            "surface-container-low": "#eff4ff",
+            "on-primary-fixed-variant": "#802a00",
+            "secondary-fixed-dim": "#bec6e0"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter": "1.25rem",
+            "space-lg": "1.5rem",
+            "margin": "2rem",
+            "gutter-mobile": "0.75rem",
+            "space-sm": "0.5rem",
+            "margin-mobile": "1rem"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Public Sans"],
+            "body-md": ["Public Sans"],
+            "headline-sm": ["Public Sans"],
+            "headline-xl": ["Public Sans"],
+            "body-lg": ["Public Sans"],
+            "label-lg": ["JetBrains Mono"],
+            "headline-lg": ["Public Sans"],
+            "display-lg": ["Public Sans"],
+            "label-md": ["JetBrains Mono"],
+            "headline-md": ["Public Sans"],
+            "headline-xl-mobile": ["Public Sans"],
+            "body-sm": ["Public Sans"],
+            "label-sm": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased font-body-md text-body-md min-h-screen pb-24">
+<!-- ================= TOP APP BAR ================= -->
+<header class="bg-surface docked full-width top-0 shadow-none border-b border-outline-variant flex justify-between items-center w-full px-margin-mobile py-space-sm sticky top-0 z-40">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Menu" class="text-primary hover:bg-surface-container active:translate-y-px transition-transform duration-75 p-space-xs rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="flex flex-col">
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary tracking-tight">ROUTIX Civic</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">CIVIC COMMAND | BENGALURU</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Alerts" class="relative text-on-surface-variant hover:bg-surface-container active:translate-y-px transition-transform duration-75 p-space-xs rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2.5 h-2.5 bg-primary rounded-full ring-2 ring-surface"></span>
+</button>
+<button aria-label="Sync" class="text-primary hover:bg-surface-container active:translate-y-px transition-transform duration-75 p-space-xs rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="sync">sync</span>
+</button>
+</div>
+</header>
+<!-- ================= SUB-HEADER: INSPECTOR BADGE ================= -->
+<section class="bg-inverse-surface text-inverse-on-surface px-margin-mobile py-space-sm border-b border-outline">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary font-bold font-label-md text-label-md border border-outline-variant">
+          AEE
+        </div>
+<div>
+<div class="font-headline-sm text-headline-sm font-semibold text-surface-bright leading-tight">
+            AEE K. Venkatraman
+          </div>
+<div class="font-label-sm text-label-sm text-surface-dim">
+            East Div. • BBMP Ward 85, Indiranagar
+          </div>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest/10 px-2 py-1 rounded border border-surface-container-high/20">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-inverse-on-surface uppercase tracking-wider">LIVE SLA</span>
+</div>
+</div>
+</section>
+<!-- ================= MAIN DASHBOARD CONTENT ================= -->
+<main class="max-w-md mx-auto px-margin-mobile py-space-md space-y-space-md">
+<!-- 1. KEY METRICS BENTO GRID -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Metric 1: Total Active Defects -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-sm text-label-sm">ACTIVE DEFECTS</span>
+<span class="material-symbols-outlined text-primary text-base" data-icon="warning">warning</span>
+</div>
+<div class="my-space-xs">
+<div class="font-headline-xl text-headline-xl font-bold text-on-surface tracking-tight leading-none">148</div>
+<p class="font-label-sm text-label-sm text-primary font-semibold mt-1 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="north">north</span> +12 post-monsoon
+          </p>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 72%"></div>
+</div>
+</div>
+<!-- Metric 2: Critical Hazards -->
+<div class="bg-error-container/30 p-space-md rounded-xl border-2 border-primary shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-primary">
+<span class="font-label-sm text-label-sm font-bold">CRITICAL HAZARDS</span>
+<span class="material-symbols-outlined text-primary text-base" data-icon="fmd_bad">fmd_bad</span>
+</div>
+<div class="my-space-xs">
+<div class="font-headline-xl text-headline-xl font-bold text-error tracking-tight leading-none">19</div>
+<p class="font-label-sm text-label-sm text-error font-semibold mt-1 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs" data-icon="timer">timer</span> SLA &lt; 24h Emergency
+          </p>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-error" style="width: 90%"></div>
+</div>
+</div>
+<!-- Metric 3: Crews in Field -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-sm text-label-sm">CREWS IN FIELD</span>
+<span class="material-symbols-outlined text-tertiary text-base" data-icon="engineering">engineering</span>
+</div>
+<div class="my-space-xs">
+<div class="font-headline-xl text-headline-xl font-bold text-on-surface tracking-tight leading-none">24</div>
+<p class="font-label-sm text-label-sm text-tertiary font-semibold mt-1">
+            Active teams deployed
+          </p>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">92% Field Occupancy</span>
+</div>
+<!-- Metric 4: Budget Allocated -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-sm text-label-sm">BUDGET ALLOCATED</span>
+<span class="material-symbols-outlined text-secondary text-base" data-icon="currency_rupee">currency_rupee</span>
+</div>
+<div class="my-space-xs">
+<div class="font-headline-xl text-headline-xl font-bold text-on-surface tracking-tight leading-none">₹18.4L</div>
+<p class="font-label-sm text-label-sm text-secondary font-semibold mt-1">
+            Ward 85 Capex Pool
+          </p>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-mono">Utilized: ₹7.20L</span>
+</div>
+</div>
+<!-- 2. PRIORITY TRIAGE MATRIX TABS -->
+<div class="pt-space-xs">
+<div class="flex items-center justify-between pb-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Triage Matrix</h2>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Priority Descending</span>
+</div>
+<!-- Horizontal Scrollable Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 custom-scrollbar">
+<button class="whitespace-nowrap px-space-md py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold shadow-sm flex items-center gap-1.5 active:translate-y-px">
+<span>Urgent Action</span>
+<span class="bg-on-primary text-primary px-1.5 py-0.2 rounded-full text-[10px] font-bold">19</span>
+</button>
+<button class="whitespace-nowrap px-space-md py-1.5 rounded-lg bg-surface-container text-on-secondary-fixed-variant font-label-md text-label-md font-semibold border border-outline-variant active:translate-y-px">
+<span>Pending Verification</span>
+<span class="bg-surface-container-high px-1.5 py-0.2 rounded-full text-[10px]">34</span>
+</button>
+<button class="whitespace-nowrap px-space-md py-1.5 rounded-lg bg-surface-container text-on-secondary-fixed-variant font-label-md text-label-md font-semibold border border-outline-variant active:translate-y-px">
+<span>Ongoing Works</span>
+<span class="bg-surface-container-high px-1.5 py-0.2 rounded-full text-[10px]">42</span>
+</button>
+<button class="whitespace-nowrap px-space-md py-1.5 rounded-lg bg-surface-container text-on-secondary-fixed-variant font-label-md text-label-md font-semibold border border-outline-variant active:translate-y-px">
+<span>Audit &amp; Payout</span>
+<span class="bg-surface-container-high px-1.5 py-0.2 rounded-full text-[10px]">15</span>
+</button>
+</div>
+</div>
+<!-- 3. HIGH PRIORITY DEFECT TRIAGE CARD WITH WORKFLOW -->
+<div class="bg-surface-container-lowest rounded-xl border-2 border-primary shadow-sm overflow-hidden">
+<!-- Status Band -->
+<div class="bg-primary px-space-md py-1.5 text-on-primary flex items-center justify-between font-label-sm text-label-sm font-semibold">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="crisis_alert">crisis_alert</span>
+          EMERGENCY SLA ACTIVE: 05h 22m REMAINING
+        </span>
+<span class="font-mono">#BLR-85-4108</span>
+</div>
+<div class="p-space-md space-y-space-md">
+<!-- Defect Header & Location -->
+<div>
+<div class="flex items-start justify-between gap-space-sm">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface leading-tight">
+              Deep Crater on Bus Route 500D
+            </h3>
+<div class="bg-error-container text-on-error-container border border-error px-2 py-0.5 rounded font-label-sm text-label-sm font-bold whitespace-nowrap">
+              CRITICAL
+            </div>
+</div>
+<p class="font-body-sm text-body-sm text-secondary mt-0.5">Outer Ring Road, near Marathahalli Footbridge</p>
+</div>
+<!-- Telemetry Badge -->
+<div class="bg-inverse-surface text-surface-bright rounded-lg p-space-xs font-label-md text-label-md flex flex-wrap items-center justify-between border border-outline">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary-fixed text-sm" data-icon="pin_drop">pin_drop</span>
+<span class="text-primary-fixed">[STN 24+400]</span>
+</div>
+<div class="text-surface-dim font-mono text-[11px]">
+            LAT: 12.9591° N | LON: 77.6974° E
+          </div>
+</div>
+<!-- AI Score & Impact Metrics Bento Strip -->
+<div class="grid grid-cols-2 gap-space-xs bg-surface-container p-space-sm rounded-lg border border-outline-variant">
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm text-secondary block">AI SEVERITY INDEX</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">96</span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">/ 100</span>
+</div>
+<span class="font-label-sm text-label-sm text-error font-medium block">
+              3 Accidents Reported
+            </span>
+</div>
+<div class="space-y-0.5 border-l border-outline-variant pl-space-sm">
+<span class="font-label-sm text-label-sm text-secondary block">TRANSIT CORRIDOR</span>
+<div class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-base text-primary" data-icon="directions_bus">directions_bus</span> BMTC High Vol.
+            </div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">
+              School Bus Lane Impact
+            </span>
+</div>
+</div>
+<!-- Repair Estimate Breakdown -->
+<div class="border border-outline-variant rounded-lg p-space-sm space-y-1 bg-surface-container-low">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-secondary">ESTIMATED REPAIR EXPENDITURE</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">₹42,500</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface flex items-center justify-between text-xs pt-1 border-t border-outline-variant/60">
+<span class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-xs" data-icon="construction">construction</span> Cold-mix Bituminous Macadam + Roller
+            </span>
+<span class="font-label-sm text-label-sm text-secondary font-mono">~8 Hours Turnaround</span>
+</div>
+</div>
+<!-- Contractor & Crew Quick Triage Selector -->
+<div class="space-y-space-xs pt-space-xs">
+<div class="flex justify-between items-center">
+<label class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Recommended Deployment</label>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">2 Units Standby</span>
+</div>
+<div class="space-y-2">
+<!-- Contractor Choice 1 -->
+<label class="flex items-center justify-between p-space-sm rounded-lg border-2 border-primary bg-surface-container-lowest cursor-pointer">
+<div class="flex items-center gap-space-sm">
+<input checked="" class="w-4 h-4 text-primary focus:ring-primary border-outline" name="crew-choice" type="radio"/>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Sri Sai Road Infrastructure Ltd</div>
+<div class="font-label-sm text-label-sm text-secondary flex items-center gap-2">
+<span class="text-primary font-bold">4.8 ★</span>
+<span>• Empanelled Tier-1</span>
+</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold bg-tertiary-fixed px-2 py-0.5 rounded">Immediate</span>
+</label>
+<!-- Contractor Choice 2 -->
+<label class="flex items-center justify-between p-space-sm rounded-lg border border-outline-variant bg-surface-container-lowest cursor-pointer opacity-80">
+<div class="flex items-center gap-space-sm">
+<input class="w-4 h-4 text-primary focus:ring-primary border-outline" name="crew-choice" type="radio"/>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface">Ward 85 Rapid Patch Crew</div>
+<div class="font-label-sm text-label-sm text-secondary">In-house Municipal Squad</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-2 py-0.5 rounded font-mono">3 Free</span>
+</label>
+</div>
+</div>
+<!-- Action Workflow Buttons -->
+<div class="pt-space-xs space-y-2">
+<button class="w-full h-12 bg-primary text-on-primary font-label-md text-label-md font-bold rounded-lg shadow-sm flex items-center justify-center gap-2 border-b-2 border-primary-container active:translate-y-px transition-transform duration-75">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+            Issue Work Order &amp; Dispatch Crew
+          </button>
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="h-10 bg-inverse-surface text-surface-bright font-label-sm text-label-sm font-semibold rounded-lg flex items-center justify-center gap-1 active:translate-y-px">
+<span class="material-symbols-outlined text-sm" data-icon="swap_horiz">swap_horiz</span>
+              Reassign Div
+            </button>
+<button class="h-10 border-2 border-error text-error bg-surface-container-lowest font-label-sm text-label-sm font-semibold rounded-lg flex items-center justify-center gap-1 active:translate-y-px">
+<span class="material-symbols-outlined text-sm" data-icon="cancel">cancel</span>
+              Reject / Duplicate
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. AUDIT & PROOF APPROVAL QUICK PREVIEW SECTION -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm overflow-hidden p-space-md space-y-space-md">
+<div class="flex items-center justify-between border-b border-outline-variant pb-space-xs">
+<div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span> READY FOR CLOSEOUT AUDIT
+          </span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">WO #7741: HAL Old Airport Rd</h3>
+</div>
+<span class="font-label-md text-label-md font-mono font-bold text-on-surface">₹64,000</span>
+</div>
+<!-- Before / After Visual Inspection Container -->
+<div class="grid grid-cols-2 gap-space-xs">
+<!-- BEFORE IMAGE -->
+<div class="space-y-1">
+<div class="relative rounded-lg overflow-hidden border border-outline-variant h-32 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A gritty high-contrast municipal engineering site photograph showing a jagged road asphalt pothole filled with rainwater on an urban Indian road under bright afternoon daylight. Road markings and curbing are visible in the background, styled with an authentic utilitarian civil inspection aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAetE3LcNw9Jbysuz155V0u5m11XA49sE5hyWxTZK8coAISF9PeclIlANaLTT2Vf9Yi_bCKMqlLfX_Z8iBbMt1DfyGnRZwi3VgJV-hWVaUNUiMhnKKRf8bW4mtwhxhPcZnCUKCWX4_u0MeqJ8aaxtzY5syxNzEV0wWZYaRZAxmFD1TAobO6k56VjuuFju5wpCM0AMiwuSydIarDGSYO1QyYq3IyyOvMPIDG3GJQhjObjBfThi4G31mFgQ"/>
+<div class="absolute bottom-1 left-1 bg-inverse-surface/80 text-surface-bright text-[10px] font-label-sm px-1.5 py-0.5 rounded">
+              BEFORE (12-Oct)
+            </div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary block truncate">Depth: 14cm | 2.4 sq.m</span>
+</div>
+<!-- AFTER IMAGE -->
+<div class="space-y-1">
+<div class="relative rounded-lg overflow-hidden border-2 border-tertiary h-32 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A clean, newly compacted asphalt patch repair on a municipal city street under direct sunny daylight. The fresh bituminous road overlay is dark black with clean roller-compacted edges, surrounded by older road asphalt, representing a completed civil works repair in an authentic civil dashboard style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR-lexWKNohBw5NfRbk_R1n96AFe01AAE0glH2Zciv43IJodzRl4MFZPRi2exIXEMaDUPNQD0A-Kgss1h1KTumqcHlry6Azsh6G6BX0UJ4xLo0rTb8U9O6h-lqydJsbITyGxZqvPmHUzxs5WUKR8rqRqzLSqLfQKvk7f_pYmfHF1oKWjgH6Vl4KCrkGbDhynLFfx8fV1VFo5e2gN1t5JJp_YiBOBBXeqhjBau4zmxYqJwiyCV-eesDog"/>
+<div class="absolute bottom-1 left-1 bg-tertiary text-on-tertiary text-[10px] font-label-sm px-1.5 py-0.5 rounded font-bold">
+              COMPLETED (Today)
+            </div>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold block truncate">Patch Compaction Cleared</span>
+</div>
+</div>
+<!-- Verification Proof Badge -->
+<div class="bg-surface-container-high p-space-xs rounded-lg border border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary text-base" data-icon="check_circle">check_circle</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">GPS Verified at Site</span>
+</div>
+<span class="font-label-sm text-label-sm bg-tertiary-container text-on-tertiary-container px-2 py-0.5 rounded font-mono font-bold">
+          Match 100%
+        </span>
+</div>
+<!-- Quick Approval Button -->
+<button class="w-full h-12 bg-tertiary hover:bg-tertiary/90 text-on-tertiary font-label-md text-label-md font-bold rounded-lg shadow-sm flex items-center justify-center gap-2 active:translate-y-px transition-transform duration-75">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+        Approve Repair &amp; Authorize ₹ Payout
+      </button>
+<div class="text-center">
+<span class="font-label-sm text-label-sm text-secondary">
+          Contractor: Apex Infra Works • Ward 85 Sub-div
+        </span>
+</div>
+</div>
+</main>
+<!-- ================= BOTTOM NAVIGATION BAR ================= -->
+<!-- 
+    Shared Component: BottomNavBar
+    Labels: ['Reporter', 'Map Tracker', 'Dashboard', 'Jobs Portal']
+    Active: 'Dashboard' (Semantic screen match)
+  -->
+<nav class="bg-surface-container-lowest docked full-width bottom-0 shadow-none border-t border-outline-variant fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-mobile py-space-xs h-16">
+<!-- Tab 1: Reporter -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs hover:bg-surface-container active:translate-y-px transition-transform duration-75" href="#">
+<span class="material-symbols-outlined" data-icon="report_problem">report_problem</span>
+<span class="font-label-sm text-label-sm mt-0.5">Reporter</span>
+</a>
+<!-- Tab 2: Map Tracker -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs hover:bg-surface-container active:translate-y-px transition-transform duration-75" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-label-sm text-label-sm mt-0.5">Map Tracker</span>
+</a>
+<!-- Tab 3: Dashboard (ACTIVE) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-space-sm py-space-xs font-semibold active:translate-y-px transition-transform duration-75" href="#">
+<span class="material-symbols-outlined" data-icon="analytics" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-label-sm text-label-sm mt-0.5">Dashboard</span>
+</a>
+<!-- Tab 4: Jobs Portal -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs hover:bg-surface-container active:translate-y-px transition-transform duration-75" href="#">
+<span class="material-symbols-outlined" data-icon="engineering">engineering</span>
+<span class="font-label-sm text-label-sm mt-0.5">Jobs Portal</span>
+</a>
+</nav>
+</body></html>

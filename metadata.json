@@ -1,0 +1,6 @@
+{
+  "name": "ROUTIX Civic - Road Defect Tracker & Civic Command",
+  "description": "Public road defect tracker, municipal civic command dashboard, AI defect scanner, and workforce field execution portal for urban road infrastructure.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

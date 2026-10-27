@@ -1,0 +1,230 @@
+---
+name: Civic Infra High-Contrast
+colors:
+  surface: '#f8f9ff'
+  surface-dim: '#ccdbf4'
+  surface-bright: '#f8f9ff'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#eff4ff'
+  surface-container: '#e6eeff'
+  surface-container-high: '#dde9ff'
+  surface-container-highest: '#d5e3fd'
+  on-surface: '#0d1c2f'
+  on-surface-variant: '#5a4138'
+  inverse-surface: '#233144'
+  inverse-on-surface: '#ebf1ff'
+  outline: '#8f7066'
+  outline-variant: '#e3bfb2'
+  surface-tint: '#a83900'
+  primary: '#a43700'
+  on-primary: '#ffffff'
+  primary-container: '#cd4700'
+  on-primary-container: '#fffbff'
+  inverse-primary: '#ffb59a'
+  secondary: '#565e74'
+  on-secondary: '#ffffff'
+  secondary-container: '#dae2fd'
+  on-secondary-container: '#5c647a'
+  tertiary: '#006948'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#00855d'
+  on-tertiary-container: '#f5fff7'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#ffdbcf'
+  primary-fixed-dim: '#ffb59a'
+  on-primary-fixed: '#380d00'
+  on-primary-fixed-variant: '#802a00'
+  secondary-fixed: '#dae2fd'
+  secondary-fixed-dim: '#bec6e0'
+  on-secondary-fixed: '#131b2e'
+  on-secondary-fixed-variant: '#3f465c'
+  tertiary-fixed: '#85f8c4'
+  tertiary-fixed-dim: '#68dba9'
+  on-tertiary-fixed: '#002114'
+  on-tertiary-fixed-variant: '#005137'
+  background: '#f8f9ff'
+  on-background: '#0d1c2f'
+  surface-variant: '#d5e3fd'
+typography:
+  display-lg:
+    fontFamily: Public Sans
+    fontSize: 48px
+    fontWeight: '800'
+    lineHeight: 56px
+    letterSpacing: -0.02em
+  headline-xl:
+    fontFamily: Public Sans
+    fontSize: 36px
+    fontWeight: '700'
+    lineHeight: 44px
+    letterSpacing: -0.015em
+  headline-xl-mobile:
+    fontFamily: Public Sans
+    fontSize: 28px
+    fontWeight: '700'
+    lineHeight: 36px
+    letterSpacing: -0.01em
+  headline-lg:
+    fontFamily: Public Sans
+    fontSize: 30px
+    fontWeight: '700'
+    lineHeight: 38px
+    letterSpacing: -0.01em
+  headline-lg-mobile:
+    fontFamily: Public Sans
+    fontSize: 24px
+    fontWeight: '700'
+    lineHeight: 32px
+    letterSpacing: 0em
+  headline-md:
+    fontFamily: Public Sans
+    fontSize: 24px
+    fontWeight: '600'
+    lineHeight: 32px
+    letterSpacing: 0em
+  headline-sm:
+    fontFamily: Public Sans
+    fontSize: 20px
+    fontWeight: '600'
+    lineHeight: 28px
+    letterSpacing: 0em
+  body-lg:
+    fontFamily: Public Sans
+    fontSize: 18px
+    fontWeight: '400'
+    lineHeight: 28px
+    letterSpacing: 0em
+  body-md:
+    fontFamily: Public Sans
+    fontSize: 16px
+    fontWeight: '400'
+    lineHeight: 24px
+    letterSpacing: 0em
+  body-sm:
+    fontFamily: Public Sans
+    fontSize: 14px
+    fontWeight: '500'
+    lineHeight: 20px
+    letterSpacing: 0.01em
+  label-lg:
+    fontFamily: JetBrains Mono
+    fontSize: 14px
+    fontWeight: '600'
+    lineHeight: 20px
+    letterSpacing: 0.02em
+  label-md:
+    fontFamily: JetBrains Mono
+    fontSize: 12px
+    fontWeight: '500'
+    lineHeight: 16px
+    letterSpacing: 0.03em
+  label-sm:
+    fontFamily: JetBrains Mono
+    fontSize: 11px
+    fontWeight: '600'
+    lineHeight: 14px
+    letterSpacing: 0.04em
+rounded:
+  sm: 0.125rem
+  DEFAULT: 0.25rem
+  md: 0.375rem
+  lg: 0.5rem
+  xl: 0.75rem
+  full: 9999px
+spacing:
+  gutter: 1.25rem
+  gutter-mobile: 0.75rem
+  margin: 2rem
+  margin-mobile: 1rem
+  space-xs: 0.25rem
+  space-sm: 0.5rem
+  space-md: 1rem
+  space-lg: 1.5rem
+  space-xl: 2.5rem
+---
+
+## Brand & Style
+
+This design system establishes a mission-critical, public-works civic technology visual language for road infrastructure inspection, municipal asset lifecycle tracking, and field workforce operations. The aesthetic pairs the authoritative precision of civil engineering dashboards with the rugged utility required for field devices operating under direct sunlight across Indian climatic conditions.
+
+The visual signature is utilitarian, high-contrast, and tactile:
+- **Field-Ready Authority:** Crisp structural divisions, dark civic framing elements, and uncompromising optical contrast that prevent legibility loss in glare-heavy outdoor environments.
+- **Municipal Trustworthiness:** Balanced, institutional slate-navy neutrals ground high-visibility hazard ambers and repair verification emeralds, avoiding flashy consumer trends in favor of industrial longevity.
+- **Tactile Operational Feedback:** Prominent interactive surfaces with pronounced physical state shifts, solid hit targets, and clear mechanical borders suited for ruggedized tablets and glove-assisted input.
+
+## Colors
+
+The palette directly models civil engineering safety conventions, municipal governance clarity, and statutory Indian public infrastructure standards.
+
+- **Primary (`#E65100` / Safety Amber-Orange):** Reserved for unassigned defects, critical road hazards, structural warnings, priority action buttons, and active workflow focus points. It demands immediate operational attention without causing cognitive fatigue.
+- **Secondary (`#0F172A` / Civic Deep Navy):** Represents municipal oversight, stable asset ledgers, high-order navigation, and authoritative tabular headers. Acts as the deep structural anchor.
+- **Tertiary (`#059669` / Verified Emerald):** Designates closed quality-check tickets, structurally verified patches, on-spec compaction scores, and validated civic expenditures.
+- **Neutral (`#334155` / Engineering Slate):** Forms crisp structural dividers, body typography, geospatial perimeter lines, and secondary analytical readouts.
+- **Canvas & Surface Architecture:** Base workspace uses an ultra-clear, high-legibility off-white (`#F8FAFC`) with elevated card layers in pure white (`#FFFFFF`) bound by hard-edged structural borders (`#CBD5E1`) to guarantee minimum 7:1 contrast ratios in sunlight.
+
+## Typography
+
+The type system prioritizes uncompromised optical clarity across varied display panels, sunlight glare, and rapid data assimilation.
+
+- **Primary & Structural (Public Sans):** A systematic, highly legible grotesque designed for administrative and public interfaces. Used across all layout headings, structural sections, form fields, and operational descriptions. High x-height and distinct apertures preserve legibility when viewed at arm’s length on field vehicle mounts.
+- **Telemetry & Financial Data (JetBrains Mono):** Monospaced precision reserved for GPS coordinates (latitude/longitude), road chainage stationing (e.g., `CH: 14+250`), asset inventory IDs, timestamp logs, sensor tolerances, and Indian Rupee financial figures (`₹12,48,500.00`). Fixed-width characters prevent visual shifting during real-time data streaming.
+
+## Layout & Spacing
+
+The layout model employs a strict, content-dense fluid 12-column grid on desktop/control room terminals and drops to a 4-column layout on field mobile devices.
+
+- **Desktop (≥ 1280px):** 12-column layout with fixed split regions: persistent left operational drawer (280px), flexible central split-screen geospatial map/list view, and collapsible right inspector pane (380px). Gutter spacing stays locked at `1.25rem` (`20px`).
+- **Tablet (768px – 1279px):** 8-column layout. Sidebars convert into bottom-anchored modal sheets to maintain maximum map canvas area for spatial tagging.
+- **Mobile (< 768px):** 4-column layout with edge-to-edge critical status cards, `1rem` outer screen margin, and minimum touch target boundaries of `48px` vertically to support high-movement field logging.
+- **Data Spacing Integrity:** Interior component gutters adhere to strict tabular increments. Key-value telemetry sets always use `space-sm` (`8px`) vertical gaps and `space-md` (`16px`) row separation.
+
+## Elevation & Depth
+
+Depth in this system avoids fragile atmospheric blurs, soft feathering, or translucent glass styles that wash out under bright ambient sunlight. Visual hierarchy relies on tonal surface framing, sharp mechanical layering, and high-contrast structural borders:
+
+- **Surface Levels:**
+  - `Level 0 (Canvas)`: `#F8FAFC` base application background.
+  - `Level 1 (Card / Grid Base)`: Pure `#FFFFFF` surface framed by a solid `1px` or `1.5px` border in `#CBD5E1`.
+  - `Level 2 (Overlays / Action Panels)`: `#FFFFFF` with a crisp, low-diffusion perimeter shadow (`0px 4px 0px 0px #0F172A15, 0px 8px 16px -4px #0F172A10`) plus a defining `#94A3B8` outline.
+  - `Level 3 (Modal / Emergency Road Hazard Takeover)`: Dark `#0F172A` or stark white framed by high-contrast `2px` amber `#E65100` structural border with backdrop dimming (`#0F172A70`).
+- **Mechanical Tactility:** Buttons, input shells, and badge containers feature visible physical borders that anchor them to their parent surfaces without relying on ambient drop shadows for affordance recognition.
+
+## Shapes
+
+The shape architecture is intentionally crisp, industrial, and utilitarian (`roundedness: 1`), communicating civil engineering precision and durability:
+
+- **Standard Elements (0.25rem / 4px):** Form inputs, operational buttons, metric cells, telemetry pills, and table line-item rows utilize a minimal 4px radius. This reinforces structure without introducing visual softness.
+- **Structural Cards & Map Panels (0.5rem / 8px):** Primary work-order cards, modal dialogue frames, and floating map viewport panels use 8px rounded corners to visually group related civic metrics.
+- **Status Tags & Sensor Badges:** Remain compact, tight-cornered rectangles (4px corner radius) to preserve horizontal space inside dense GIS data tables.
+
+## Components
+
+### Buttons & Interactive Triggers
+- **Primary Field Action:** Solid `#E65100` fill with white text, `48px` minimum height for field safety, `1px solid #BF360C` lower structural edge, active state depressing `1px` downward.
+- **Secondary Civic Utility:** Solid `#0F172A` navy fill with crisp white text for standard submissions, downloads, and municipal route assignments.
+- **Destructive / Hazard Stop:** Outline `#DC2626` on pure white with `2px` border thickness.
+
+### Status Chips & Badges
+- **Defect Pothole / Severe Crack (Active Hazard):** Background `#FFF7ED`, border `1px solid #F57C00`, text `#9A3412`, featuring a solid `#E65100` indicator dot.
+- **Verified Repair (Inspection Passed):** Background `#ECFDF5`, border `1px solid #10B981`, text `#065F46`, paired with a checkmark glyph.
+- **Under Civic Tender / Procurement:** Background `#F1F5F9`, border `1px solid #94A3B8`, text `#334155`.
+
+### GPS & Telemetry Badges
+- Constructed exclusively with the `label-md` monospace token (`JetBrains Mono`).
+- Container features a `#0F172A` background with crisp `#38BDF8` or `#F8FAFC` coordinate text.
+- Formats chainage identifiers with fixed visual separation: `[STN 24+400]` | `LAT: 19.0760° N` | `LON: 72.8777° E`.
+
+### Financial Formatting & Currency Blocks
+- Municipal expenditure, contractor payment milestones, and estimate calculations utilize standard Indian digit grouping (`₹1,00,000` Lakhs and `₹1,00,00,000` Crores).
+- Rupee glyph (`₹`) is rendered at the exact baseline height of the adjacent tabular numbers using monospace font weights to preserve ledger alignment.
+
+### Cards & Defect List Items
+- Cards feature top or left operational status stripes (4px thick solid color indicating priority: `#E65100` for emergency, `#059669` for cleared, `#F59E0B` for pending review).
+- Clear compartmentalization between defect imagery, geospatial coordinate tags, estimated road repair volume, and allocated municipal contractor details.
+
+### Form Inputs & Checkboxes
+- **Inputs:** `44px` height, `#FFFFFF` background, `1.5px` border in `#94A3B8`, shifting to a `2px` `#E65100` focus ring with a `2px` clear offset.
+- **Checkboxes & Radios:** High-contrast `20px × 20px` solid hit targets with `2px` stroke, shifting to solid `#0F172A` or `#E65100` when checked.

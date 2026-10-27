@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ROUTIX Civic - Workforce Coordination &amp; Field Crew Execution Portal</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Public+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-fixed-variant": "#3f465c",
+            "primary": "#a43700",
+            "error": "#ba1a1a",
+            "surface-container": "#e6eeff",
+            "surface-dim": "#ccdbf4",
+            "on-primary-container": "#fffbff",
+            "inverse-on-surface": "#ebf1ff",
+            "primary-fixed": "#ffdbcf",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#380d00",
+            "surface-tint": "#a83900",
+            "on-error": "#ffffff",
+            "surface": "#f8f9ff",
+            "secondary-fixed": "#dae2fd",
+            "surface-container-lowest": "#ffffff",
+            "outline": "#8f7066",
+            "tertiary-container": "#00855d",
+            "background": "#f8f9ff",
+            "on-surface-variant": "#5a4138",
+            "secondary-container": "#dae2fd",
+            "on-tertiary-fixed-variant": "#005137",
+            "surface-container-high": "#dde9ff",
+            "on-tertiary-fixed": "#002114",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed": "#131b2e",
+            "outline-variant": "#e3bfb2",
+            "surface-variant": "#d5e3fd",
+            "surface-container-highest": "#d5e3fd",
+            "surface-bright": "#f8f9ff",
+            "inverse-primary": "#ffb59a",
+            "on-surface": "#0d1c2f",
+            "on-error-container": "#93000a",
+            "tertiary": "#006948",
+            "secondary": "#565e74",
+            "primary-fixed-dim": "#ffb59a",
+            "on-secondary-container": "#5c647a",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed-dim": "#68dba9",
+            "tertiary-fixed": "#85f8c4",
+            "primary-container": "#cd4700",
+            "inverse-surface": "#233144",
+            "on-tertiary-container": "#f5fff7",
+            "error-container": "#ffdad6",
+            "on-background": "#0d1c2f",
+            "surface-container-low": "#eff4ff",
+            "on-primary-fixed-variant": "#802a00",
+            "secondary-fixed-dim": "#bec6e0"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter": "1.25rem",
+            "space-lg": "1.5rem",
+            "margin": "2rem",
+            "gutter-mobile": "0.75rem",
+            "space-sm": "0.5rem",
+            "margin-mobile": "1rem"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Public Sans"],
+            "body-md": ["Public Sans"],
+            "headline-sm": ["Public Sans"],
+            "headline-xl": ["Public Sans"],
+            "body-lg": ["Public Sans"],
+            "label-lg": ["JetBrains Mono"],
+            "headline-lg": ["Public Sans"],
+            "display-lg": ["Public Sans"],
+            "label-md": ["JetBrains Mono"],
+            "headline-md": ["Public Sans"],
+            "headline-xl-mobile": ["Public Sans"],
+            "body-sm": ["Public Sans"],
+            "label-sm": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased pb-24 selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TOP APP BAR (Shared Component JSON Blueprint) -->
+<header class="sticky top-0 z-40 bg-surface border-b border-outline-variant px-margin-mobile py-space-sm shadow-none">
+<div class="flex justify-between items-center w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Menu" class="p-space-xs text-primary hover:bg-surface-container active:translate-y-px transition-transform duration-75 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary tracking-tight">ROUTIX Civic</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container border border-outline-variant font-label-sm text-label-sm text-on-surface font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+          ONLINE SYNC
+        </span>
+<button aria-label="Sync Database" class="p-space-xs text-primary hover:bg-surface-container active:translate-y-px transition-transform duration-75 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">sync</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN VIEW CONTAINER -->
+<main class="max-w-4xl mx-auto px-margin-mobile pt-space-md space-y-space-md">
+<!-- WORKER PROFILE & DUTY STATUS CARD -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-md shadow-none">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<!-- Worker Profile Info -->
+<div class="flex items-start gap-space-md">
+<div class="relative w-14 h-14 rounded-xl bg-inverse-surface text-surface flex items-center justify-center shrink-0 border border-outline">
+<span class="material-symbols-outlined text-[32px] text-surface-tint">engineering</span>
+<span class="absolute -bottom-1 -right-1 bg-tertiary-container text-on-tertiary text-[10px] font-bold px-1 rounded-sm border border-surface-container-lowest">L3</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2 flex-wrap">
+<h1 class="font-headline-sm text-headline-sm text-on-surface font-bold">Ramesh Gowda</h1>
+<span class="bg-surface-container-high text-on-secondary-fixed border border-outline-variant px-2 py-0.5 rounded font-label-md text-label-md font-semibold">Master Road Mason</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified</span>
+              Level 3 Certified • PWD Sub-Division 4 (Bengaluru)
+            </p>
+</div>
+</div>
+<!-- Duty Toggle Switch -->
+<div class="flex items-center justify-between sm:justify-end gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-lg border border-outline-variant">
+<div class="text-left sm:text-right">
+<p class="font-label-md text-label-md font-bold text-on-surface">Available for Jobs</p>
+<p class="font-label-sm text-label-sm text-tertiary font-semibold">STATUS: ON DUTY</p>
+</div>
+<button aria-checked="true" class="relative inline-flex h-7 w-12 shrink-0 cursor-pointer rounded-full border-2 border-primary bg-primary p-0.5 transition-colors duration-200 ease-in-out focus:outline-none" role="switch" type="button">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-on-primary shadow-sm ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+</div>
+<!-- Wallet & Ledger Earnings Row -->
+<div class="mt-space-md pt-space-md border-t border-outline-variant grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-lg border border-outline-variant">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">account_balance_wallet</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">WEEKLY EARNINGS</p>
+<p class="font-label-lg text-label-lg font-bold text-on-surface">₹14,200 Earned this Week</p>
+</div>
+</div>
+<span class="bg-tertiary-container text-on-tertiary font-label-sm text-label-sm font-bold px-2 py-1 rounded">PAID</span>
+</div>
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low rounded-lg border border-outline-variant">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-outline text-[24px]">pending_actions</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">ESCROW CLEARANCE</p>
+<p class="font-label-lg text-label-lg font-bold text-on-surface">3 Pending Approval</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">~ ₹8,450 Locked</span>
+</div>
+</div>
+</section>
+<!-- FIELD SAFETY BANNER -->
+<aside class="bg-surface-container-highest border-l-4 border-l-primary-container border-y border-r border-outline-variant p-space-md rounded-xl flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px] shrink-0 mt-0.5">health_and_safety</span>
+<div>
+<p class="font-label-md text-label-md font-bold text-primary tracking-wide">MANDATORY BBMP WORKFORCE ADVISORY</p>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+          Safety Protocol: High-visibility vest &amp; road cones mandatory during daytime traffic hours. Keep beacon lights active during compaction.
+        </p>
+</div>
+</aside>
+<!-- JOB FEED & ASSIGNMENT TABS -->
+<nav aria-label="Job Filters" class="flex border-b border-outline-variant gap-2 overflow-x-auto pb-1">
+<button class="flex items-center gap-1.5 px-space-md py-space-sm border-b-2 border-primary text-primary font-body-sm text-body-sm font-bold whitespace-nowrap bg-surface-container-low rounded-t-lg">
+<span class="material-symbols-outlined text-[18px]">assignment_turned_in</span>
+        Assigned to Me (1 Active)
+      </button>
+<button class="flex items-center gap-1.5 px-space-md py-space-sm border-b-2 border-transparent text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-semibold whitespace-nowrap rounded-t-lg">
+<span class="material-symbols-outlined text-[18px]">work_history</span>
+        Available Gigs in Ward 85 (6)
+      </button>
+<button class="flex items-center gap-1.5 px-space-md py-space-sm border-b-2 border-transparent text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-semibold whitespace-nowrap rounded-t-lg">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+        Completed &amp; Payouts (28)
+      </button>
+</nav>
+<!-- ACTIVE JOB EXECUTION CARD -->
+<section class="bg-surface-container-lowest border-2 border-primary-container rounded-xl overflow-hidden shadow-none">
+<!-- Status Strip Header -->
+<div class="bg-primary-container text-on-primary-container px-space-md py-space-xs flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-bright animate-ping"></span>
+<span class="font-label-md text-label-md tracking-wider font-bold">CURRENT DISPATCH EXECUTION</span>
+</div>
+<span class="font-label-md text-label-md font-bold px-2 py-0.5 bg-on-primary-fixed text-on-primary-container rounded">WO-9021</span>
+</div>
+<div class="p-space-md space-y-space-md">
+<!-- Job Description & Spatial Location -->
+<div class="flex flex-col lg:flex-row justify-between gap-space-md">
+<div class="space-y-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Emergency Pothole Patching - 2.4m x 1.8m</h2>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">distance</span>
+<span>Near Bellandur Flyover Service Road, Ward 85 (1.4 km away)</span>
+</div>
+<!-- Monospace Telemetry Stamp -->
+<div class="inline-block mt-1 font-label-sm text-label-sm bg-inverse-surface text-surface px-2 py-1 rounded">
+              [STN 24+400] | LAT: 12.9352° N | LON: 77.6772° E
+            </div>
+</div>
+<!-- Guaranteed Payout & Approval Details -->
+<div class="bg-surface-container-low border border-outline-variant p-space-sm rounded-lg flex flex-col justify-center min-w-[260px]">
+<p class="font-label-sm text-label-sm text-on-surface-variant font-medium">GUARANTEED FIELD PAYOUT</p>
+<p class="font-headline-md text-headline-md text-primary font-bold">₹3,850</p>
+<p class="font-label-sm text-label-sm text-secondary font-medium mt-0.5">
+              4-hour slot • Direct Bank / UPI Transfer upon AEE Approval
+            </p>
+</div>
+</div>
+<!-- Required Tools & Equipment Grid -->
+<div class="border border-outline-variant rounded-lg p-space-sm bg-surface">
+<p class="font-label-sm text-label-sm font-bold text-on-surface-variant mb-1.5 uppercase">Mandatory Civic Assets &amp; Raw Material Checklist</p>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest border border-outline px-2.5 py-1 rounded text-body-sm font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary">inventory_2</span>
+              Cold Asphalt Mix (8 bags)
+            </span>
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest border border-outline px-2.5 py-1 rounded text-body-sm font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary">hardware</span>
+              Hand Tamper / Plate Compactor
+            </span>
+<span class="inline-flex items-center gap-1 bg-surface-container-lowest border border-outline px-2.5 py-1 rounded text-body-sm font-medium">
+<span class="material-symbols-outlined text-[16px] text-primary">traffic</span>
+              Safety Cones
+            </span>
+</div>
+</div>
+<!-- Visual Progress Stepper Header -->
+<div class="pt-space-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Field Execution Sequence</h3>
+<span class="font-label-md text-label-md text-primary font-bold bg-primary-fixed px-2 py-0.5 rounded">STEP 3 OF 5 ACTIVE</span>
+</div>
+<!-- Step-by-Step Vertical Stepper -->
+<div class="space-y-space-md border-l-2 border-outline ml-3 pl-space-md relative">
+<!-- Step 1: Check-in -->
+<div class="relative">
+<span class="absolute -left-[27px] top-0 w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary flex items-center justify-center ring-4 ring-background">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</span>
+<div class="flex items-center justify-between flex-wrap gap-1">
+<p class="font-body-md text-body-md font-bold text-on-surface">Step 1: Check-in with GPS</p>
+<span class="font-label-sm text-label-sm text-tertiary font-bold bg-secondary-fixed px-2 py-0.5 rounded">
+                  Completed: 08:30 AM ✓
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Geo-fence lock within 15 meters of hazard pin.</p>
+</div>
+<!-- Step 2: Pre-Repair Photo Upload -->
+<div class="relative">
+<span class="absolute -left-[27px] top-0 w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary flex items-center justify-center ring-4 ring-background">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</span>
+<div class="flex items-center justify-between flex-wrap gap-1">
+<p class="font-body-md text-body-md font-bold text-on-surface">Step 2: Pre-Repair Photo Upload</p>
+<span class="font-label-sm text-label-sm text-tertiary font-bold bg-secondary-fixed px-2 py-0.5 rounded">
+                  Captured &amp; AI Verified ✓
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cavity depth 8.2cm validated via Edge AI camera.</p>
+</div>
+<!-- Step 3: In-Progress Compaction Log (ACTIVE STEP) -->
+<div class="relative bg-surface-container-low border border-primary-container p-space-sm rounded-lg">
+<span class="absolute -left-[35px] top-3 w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center ring-4 ring-background animate-pulse">
+<span class="material-symbols-outlined text-[16px]">hourglass_top</span>
+</span>
+<div class="flex items-center justify-between flex-wrap gap-1">
+<p class="font-body-md text-body-md font-bold text-primary">Step 3: In-Progress Compaction Log</p>
+<span class="font-label-sm text-label-sm text-on-primary-container bg-primary-container px-2 py-0.5 rounded font-bold uppercase">
+                  ACTIVE LOGGING
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1">Record asphalt binder temperature and intermediate plate tamper passes.</p>
+<div class="mt-space-sm flex flex-wrap gap-space-sm">
+<button class="bg-primary text-on-primary px-space-md py-2 min-h-[44px] rounded font-label-md text-label-md font-bold flex items-center gap-1.5 active:translate-y-px transition-transform duration-75 shadow-none border border-outline">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+                  Add Photo / Note
+                </button>
+<button class="bg-surface-container-lowest border border-outline text-on-surface px-space-md py-2 min-h-[44px] rounded font-label-md text-label-md font-bold flex items-center gap-1.5 active:translate-y-px transition-transform duration-75">
+<span class="material-symbols-outlined text-[18px]">thermostat</span>
+                  Log 135°C Mix Temp
+                </button>
+</div>
+</div>
+<!-- Step 4: Post-Repair Photo & Texture -->
+<div class="relative">
+<span class="absolute -left-[27px] top-0 w-6 h-6 rounded-full bg-surface-container-highest border border-outline text-on-surface-variant flex items-center justify-center ring-4 ring-background">
+<span class="font-label-sm text-label-sm font-bold">4</span>
+</span>
+<div class="flex items-center justify-between flex-wrap gap-1">
+<p class="font-body-md text-body-md font-semibold text-on-surface">Step 4: Post-Repair Finish Photo &amp; Texture Verification</p>
+<button class="bg-surface-container-lowest border border-outline-variant text-primary px-3 py-1 rounded font-label-sm text-label-sm font-bold flex items-center gap-1 hover:bg-surface-container active:translate-y-px">
+<span class="material-symbols-outlined text-[16px]">upload</span>
+                  Upload Button
+                </button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Surface level feathering check with water runoff test.</p>
+</div>
+<!-- Step 5: Final Submission -->
+<div class="relative">
+<span class="absolute -left-[27px] top-0 w-6 h-6 rounded-full bg-surface-container-highest border border-outline text-on-surface-variant flex items-center justify-center ring-4 ring-background">
+<span class="font-label-sm text-label-sm font-bold">5</span>
+</span>
+<p class="font-body-md text-body-md font-semibold text-secondary">Step 5: Submit Completion for Instant AEE Verification &amp; Payment</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ward 85 Assistant Executive Engineer sign-off releases UPI fund sweep within 30 minutes.</p>
+</div>
+</div>
+</div>
+<!-- Master Submit Action (Full width field CTA) -->
+<div class="pt-space-sm border-t border-outline-variant">
+<button class="w-full bg-primary text-on-primary py-space-sm px-space-md min-h-[48px] rounded font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 active:translate-y-px transition-transform duration-75 border-b-2 border-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+            CONFIRM &amp; PROCEED TO FINAL POST-REPAIR AUDIT
+          </button>
+</div>
+</div>
+</section>
+<!-- NEARBY OPEN JOB OPPORTUNITIES -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Nearby Open Job Opportunities</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Instant civic task allocations within 5km radius</p>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary">Ward 85 Dispatch Active</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Gig Card 1 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-md flex flex-col justify-between hover:border-outline transition-colors">
+<div class="space-y-2">
+<div class="flex items-start justify-between gap-2">
+<span class="bg-error-container text-on-error-container font-label-sm text-label-sm font-bold px-2 py-0.5 rounded">URGENT HAZARD</span>
+<p class="font-headline-sm text-headline-sm text-primary font-bold">₹5,200</p>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Broken Stormwater Drain Slab Repair</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+              Whitefield Main Rd (3.2 km away)
+            </p>
+<div class="flex items-center gap-3 pt-1">
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">group</span>
+                2 Workers needed
+              </span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                Est. 5.5 Hours
+              </span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-outline-variant flex items-center justify-between gap-space-sm">
+<button class="w-full bg-on-background text-on-primary py-2.5 px-space-md min-h-[44px] rounded font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 active:translate-y-px transition-transform duration-75">
+<span class="material-symbols-outlined text-[18px]">handyman</span>
+              Apply Now
+            </button>
+</div>
+</article>
+<!-- Gig Card 2 -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-space-md flex flex-col justify-between hover:border-outline transition-colors">
+<div class="space-y-2">
+<div class="flex items-start justify-between gap-2">
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold px-2 py-0.5 rounded">CIVIC WORKS</span>
+<p class="font-headline-sm text-headline-sm text-primary font-bold">₹2,100</p>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">Speed Breaker Repainting &amp; Edge Seal</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+              Kaikondrahalli Junction (2.1 km away)
+            </p>
+<div class="flex items-center gap-3 pt-1">
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">person</span>
+                1 Worker needed
+              </span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+                Est. 2 Hours
+              </span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-outline-variant flex items-center justify-between gap-space-sm">
+<button class="w-full bg-on-background text-on-primary py-2.5 px-space-md min-h-[44px] rounded font-label-md text-label-md font-bold flex items-center justify-center gap-1.5 active:translate-y-px transition-transform duration-75">
+<span class="material-symbols-outlined text-[18px]">handyman</span>
+              Apply Now
+            </button>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- BOTTOM NAVIGATION BAR (Shared Component JSON Blueprint) -->
+<!-- Contextual Active Destination: 'Jobs Portal' (Destination index 3) -->
+<nav aria-label="Bottom Navigation" class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-mobile py-space-xs h-16 bg-surface-container-lowest border-t border-outline-variant shadow-none">
+<!-- Item 0: Reporter -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs hover:bg-surface-container active:translate-y-px transition-transform duration-75" href="#">
+<span class="material-symbols-outlined text-[24px]">report_problem</span>
+<span class="font-label-sm text-label-sm mt-0.5">Reporter</span>
+</a>
+<!-- Item 1: Map Tracker -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs hover:bg-surface-container active:translate-y-px transition-transform duration-75" href="#">
+<span class="material-symbols-outlined text-[24px]">map</span>
+<span class="font-label-sm text-label-sm mt-0.5">Map Tracker</span>
+</a>
+<!-- Item 2: Dashboard -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-sm py-space-xs hover:bg-surface-container active:translate-y-px transition-transform duration-75" href="#">
+<span class="material-symbols-outlined text-[24px]">analytics</span>
+<span class="font-label-sm text-label-sm mt-0.5">Dashboard</span>
+</a>
+<!-- Item 3: Jobs Portal (ACTIVE ACCORDING TO PROMPT) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-space-sm py-space-xs font-semibold hover:bg-surface-container active:translate-y-px transition-transform duration-75" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">engineering</span>
+<span class="font-label-sm text-label-sm mt-0.5 font-bold">Jobs Portal</span>
+</a>
+</nav>
+</body></html>
